@@ -1,0 +1,58 @@
+input[type="password"],
+input[type="email"] {
+  width: auto;
+  box-sizing: border-box;
+  margin-bottom: 0.1rem;
+  border: 1px solid #ccc;
+}
+
+label[for="password"] {
+  margin-left: 4rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+label[for="email"] {
+  margin-left: 5rem;
+  margin-top: 1rem;
+  margin-right: 1.7rem;
+}
+
+.login-name {
+  margin-left: 11rem;
+}
+
+.pw-err {
+  margin-left: 9rem;
+}
+
+.btn {
+  background-color: #2c67de;
+  color: #fff;
+  padding: 5px 1.9rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border: 0rem;
+  border-radius: 1rem;
+}
+
+.form-group {
+  color: black;
+  text-align: right;
+  margin-right: 6rem;
+}
+.form-control {
+  margin-top: 1rem;
+}
+
+.wrapper {
+  width: 30rem;
+  height: 23rem;
+  margin: 8rem auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.4rem;
+  color: black;
+}

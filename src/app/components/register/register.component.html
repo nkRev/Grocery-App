@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div *ngIf="message" class="alert alert-success" role="alert">
+    {{message}}
+  </div>
+</div>
+<div class="container">
+  <h2 class="text-center">Register</h2>
+
+  <form #registerForm="ngForm" (submit)="onFormSubmit(registerForm.value)">
+    <div class="form-group">
+      <label for="first-name">First Name</label>
+      <input
+        type="text"
+        #firstName="ngModel"
+        [class.is-invalid]="firstName.invalid && firstName.touched"
+        name="firstName"
+        class="form-control"
+        [(ngModel)]="userModel.firstName"
+        required
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="firstName.valid || firstName.touched"
+      ></small>
+    </div>
+    <div class="form-group">
+      <label for="">E-mail</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="userModel.email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="">Mobile</label>
+      <input
+        type="text"
+        #mobile="ngModel"
+        [class.is-invalid]="mobile.invalid && mobile.touched"
+        class="form-control"
+        name="mobile"
+        [(ngModel)]="userModel.mobile"
+        required
+        pattern="^\d{10}$"
+      />
+      <div *ngIf="mobile.errors && (mobile.invalid || mobile.touched)">
+        <small class="text-danger" *ngIf="mobile.errors.required"
+          >Mobile Number is required</small
+        >
+        <small class="text-danger" *ngIf="mobile.errors.pattern"
+          >Mobile number must be 10 digits</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="userModel.password"
+      />
+    </div>
+
+    <input type="submit" value="Register" class="btn btn-primary" />
+  </form>
+</div>

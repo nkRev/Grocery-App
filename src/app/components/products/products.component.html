@@ -1,0 +1,38 @@
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+      <!-- use pipe to manipulate to uppercase of category name -->
+      <h5 class="text-center">
+        {{ catName | uppercase }}
+      </h5>
+      <!-- create list -->
+      <ul class="list-group">
+        <li class="list-group-item text-center">Types</li>
+        <li
+          class="list-group-item text-center"
+          *ngFor="let sc of subCat?.data"
+          (click)="selectedSubCategory(sc)"
+        >
+          {{ sc.subName }}
+        </li>
+      </ul>
+    </div>
+    <!-- create cards for products -->
+    <div class="col-lg-10">
+      <h3 class="text-center">All Products</h3>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let p of products?.data">
+          <div class="card">
+            <img src="{{ imgLink + p.image }}" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">{{ p.productName }}</h5>
+              <p class="card-text">{{ p.description }}</p>
+              <a href="" class="btn btn-primary btn-block">buy me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
